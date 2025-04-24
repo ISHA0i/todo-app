@@ -1,38 +1,145 @@
-.App {
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f7f6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; 
+  margin: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container h1 {
+  color: #2c3e50;
+  font-size: 2.5rem; 
+  margin-bottom: 30px; 
+  font-weight: 600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Form styling */
+.container form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px; 
+  margin-bottom: 30px; 
+}
+
+.container form input[type="text"] {
+  flex-grow: 1; /* Allow input to take available space */
+  padding: 12px 15px;
+  border: 1px solid #dfe6e9;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s , box-shadow 0.3s ;
+}
+
+.container form input[type="text"]:focus {
+  outline: none;
+  border-color: #0984e3;
+  box-shadow: 0 0 0 3px rgba(9, 132, 227, 0.2);
+}
+
+.container form button {
+  padding: 12px 25px; /* Adjusted padding */
+  border: none;
+  border-radius: 6px;
+  background-color: #0984e3; /* Primary button color */
   color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s , transform 0.2s ;
 }
 
-.App-link {
-  color: #61dafb;
+.container form button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* List styling */
+.container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; /* Remove default margin */
+  text-align: left; /* Align list items left */
+}
+
+.container ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px; /* Increased padding */
+  border: 1px solid #dfe6e9;
+  border-radius: 6px;
+  margin-bottom: 12px; /* Increased spacing */
+  background-color: #ffffff;
+  transition: background-color 0.3s , box-shadow 0.2s ;
+  word-break: break-word; /* Prevent long words from overflowing */
+}
+
+.container ul li:hover {
+  background-color: #f8f9fa; /* Subtle hover background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.container ul li span {
+  flex-grow: 1;
+  margin-right: 15px; /* Space between text and button */
+  cursor: pointer; /* Indicate text is clickable for toggle */
+}
+
+/* Delete button styling */
+.container ul li button {
+  background-color: #d63031; /* Red delete button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px; /* Slightly smaller button */
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.container ul li button:hover {
+  background-color: #b71c1c; /* Darker red on hover */
+}
+
+/* Completed item styling */
+.container ul li.completed {
+  background-color: #e9f5ec; /* Softer green background */
+  border-color: #a7d7ae;
+}
+
+.container ul li.completed span {
+  text-decoration: line-through;
+  color: #6c757d; /* Greyed out text */
+}
+
+/* Keep delete button consistent for completed items */
+.container ul li.completed button {
+  background-color: #d63031; /* Still red */
+}
+
+.container ul li.completed button:hover {
+  background-color: #b71c1c; /* Still darker red */
+}
+
+/* Placeholder text styling */
+.container ul p {
+  color: #6c757d;
+  font-style: italic;
+  text-align: center;
+  padding: 20px 0;
 }
